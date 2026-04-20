@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Creative Director & Artist</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">
+      <span class="nav__logo-text">YN</span>
+    </div>
+    <div class="nav__links">
+      <a href="#work" class="nav__link">Work</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </div>
+    <div class="nav__menu" id="navMenu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-layer hero__bg-layer--1" data-parallax="0.15"></div>
+    <div class="hero__bg-layer hero__bg-layer--2" data-parallax="0.3"></div>
+    <div class="hero__bg-layer hero__bg-layer--3" data-parallax="0.5"></div>
+    <div class="hero__particles" id="heroParticles"></div>
+    <div class="hero__content">
+      <div class="hero__eyebrow reveal-up">Creative Portfolio</div>
+      <h1 class="hero__title">
+        <span class="hero__title-line reveal-up" data-delay="0">Design.</span>
+        <span class="hero__title-line reveal-up" data-delay="120">Photography.</span>
+        <span class="hero__title-line reveal-up" data-delay="240">Art.</span>
+      </h1>
+      <p class="hero__subtitle reveal-up" data-delay="360">
+        Graphic designer, web designer, photographer &amp; artist.<br />
+        Crafting visual experiences that move people.
+      </p>
+      <div class="hero__cta reveal-up" data-delay="480">
+        <a href="#work" class="btn btn--primary">View Work</a>
+        <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator">
+      <div class="hero__scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ── REEL MARQUEE ── -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Graphic Design</span><span class="dot">·</span>
+      <span>Web Design</span><span class="dot">·</span>
+      <span>Photography</span><span class="dot">·</span>
+      <span>Digital Art</span><span class="dot">·</span>
+      <span>Brand Identity</span><span class="dot">·</span>
+      <span>UI/UX</span><span class="dot">·</span>
+      <span>Fine Art</span><span class="dot">·</span>
+      <span>Motion</span><span class="dot">·</span>
+      <span>Graphic Design</span><span class="dot">·</span>
+      <span>Web Design</span><span class="dot">·</span>
+      <span>Photography</span><span class="dot">·</span>
+      <span>Digital Art</span><span class="dot">·</span>
+      <span>Brand Identity</span><span class="dot">·</span>
+      <span>UI/UX</span><span class="dot">·</span>
+      <span>Fine Art</span><span class="dot">·</span>
+      <span>Motion</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <!-- ── DISCIPLINES ── -->
+  <section class="disciplines" id="disciplines">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow reveal-up">What I Do</span>
+        <h2 class="section-title reveal-up" data-delay="80">Four crafts.<br />One vision.</h2>
+      </div>
+      <div class="disciplines__grid">
+
+        <div class="discipline-card reveal-up" data-delay="0">
+          <div class="discipline-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="6" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/>
+              <rect x="26" y="6" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/>
+              <rect x="6" y="26" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/>
+              <circle cx="34" cy="34" r="8" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="discipline-card__title">Graphic Design</h3>
+          <p class="discipline-card__desc">Brand identities, editorial layouts, typography systems, and visual storytelling that leaves a mark.</p>
+          <div class="discipline-card__tags">
+            <span>Branding</span><span>Typography</span><span>Print</span>
+          </div>
+        </div>
+
+        <div class="discipline-card reveal-up" data-delay="100">
+          <div class="discipline-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="10" width="40" height="28" rx="4" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 38v4M32 38v4M12 42h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M13 22h6M13 26h10M29 22h6M29 26h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="24" r="5" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="discipline-card__title">Web Design</h3>
+          <p class="discipline-card__desc">Pixel-perfect digital interfaces with smooth interactions, clean code, and purposeful UX.</p>
+          <div class="discipline-card__tags">
+            <span>UI/UX</span><span>Motion</span><span>Frontend</span>
+          </div>
+        </div>
+
+        <div class="discipline-card reveal-up" data-delay="200">
+          <div class="discipline-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="10" width="36" height="28" rx="4" stroke="currentColor" stroke-width="2"/>
+              <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2"/>
+              <circle cx="24" cy="24" r="3" stroke="currentColor" stroke-width="2"/>
+              <circle cx="35" cy="15" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 class="discipline-card__title">Photography</h3>
+          <p class="discipline-card__desc">Portraits, landscapes, editorial and conceptual photography. Every frame a carefully composed story.</p>
+          <div class="discipline-card__tags">
+            <span>Portrait</span><span>Editorial</span><span>Conceptual</span>
+          </div>
+        </div>
+
+        <div class="discipline-card reveal-up" data-delay="300">
+          <div class="discipline-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 40L18 20L28 32L35 24L42 40H8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="14" cy="14" r="4" stroke="currentColor" stroke-width="2"/>
+              <path d="M34 8c2 0 6 4 0 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M34 8c-2 0-6 4 0 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="discipline-card__title">Fine Art</h3>
+          <p class="discipline-card__desc">Mixed media, digital painting, illustration and experimental work that challenges perception.</p>
+          <div class="discipline-card__tags">
+            <span>Illustration</span><span>Mixed Media</span><span>Digital</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURED WORK ── -->
+  <section class="work" id="work">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow reveal-up">Selected Work</span>
+        <h2 class="section-title reveal-up" data-delay="80">Projects that<br />define the craft.</h2>
+      </div>
+    </div>
+
+    <!-- Project 01 -->
+    <div class="project project--full reveal-scale" data-category="Graphic Design">
+      <div class="project__media" data-parallax-inner="0.12">
+        <div class="project__bg project__bg--01"></div>
+        <div class="project__overlay"></div>
+      </div>
+      <div class="project__info">
+        <span class="project__num">01</span>
+        <div class="project__text">
+          <span class="project__cat">Graphic Design · Branding</span>
+          <h3 class="project__title">Noir Collective</h3>
+          <p class="project__desc">Complete brand identity for a luxury fashion collective. Type system, color palette, packaging &amp; print materials.</p>
+          <a href="#" class="project__link">View Case Study <span>→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 02 + 03 grid -->
+    <div class="projects-grid container">
+
+      <div class="project project--half reveal-scale" data-delay="0" data-category="Web Design">
+        <div class="project__media" data-parallax-inner="0.1">
+          <div class="project__bg project__bg--02"></div>
+          <div class="project__overlay"></div>
+        </div>
+        <div class="project__info">
+          <span class="project__num">02</span>
+          <div class="project__text">
+            <span class="project__cat">Web Design · UI/UX</span>
+            <h3 class="project__title">Lumina Studio</h3>
+            <p class="project__desc">Minimal e-commerce experience for an independent jewellery brand.</p>
+            <a href="#" class="project__link">View Project <span>→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project project--half reveal-scale" data-delay="150" data-category="Photography">
+        <div class="project__media" data-parallax-inner="0.1">
+          <div class="project__bg project__bg--03"></div>
+          <div class="project__overlay"></div>
+        </div>
+        <div class="project__info">
+          <span class="project__num">03</span>
+          <div class="project__text">
+            <span class="project__cat">Photography · Editorial</span>
+            <h3 class="project__title">Silence &amp; Light</h3>
+            <p class="project__desc">Editorial series exploring the duality of urban solitude and natural grandeur.</p>
+            <a href="#" class="project__link">View Series <span>→</span></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Project 04 -->
+    <div class="project project--full reveal-scale" data-category="Fine Art">
+      <div class="project__media" data-parallax-inner="0.12">
+        <div class="project__bg project__bg--04"></div>
+        <div class="project__overlay"></div>
+      </div>
+      <div class="project__info">
+        <span class="project__num">04</span>
+        <div class="project__text">
+          <span class="project__cat">Fine Art · Digital Painting</span>
+          <h3 class="project__title">Fractured Myths</h3>
+          <p class="project__desc">A series of 12 digital paintings reimagining ancient mythology through a cyberpunk lens. Exhibited at Galería Tres, Madrid.</p>
+          <a href="#" class="project__link">View Exhibition <span>→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 05 + 06 grid -->
+    <div class="projects-grid container">
+
+      <div class="project project--half reveal-scale" data-delay="0" data-category="Web Design">
+        <div class="project__media" data-parallax-inner="0.1">
+          <div class="project__bg project__bg--05"></div>
+          <div class="project__overlay"></div>
+        </div>
+        <div class="project__info">
+          <span class="project__num">05</span>
+          <div class="project__text">
+            <span class="project__cat">Web Design · Motion</span>
+            <h3 class="project__title">Aether Agency</h3>
+            <p class="project__desc">Award-winning creative agency website with generative backgrounds and scroll-driven animations.</p>
+            <a href="#" class="project__link">View Project <span>→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project project--half reveal-scale" data-delay="150" data-category="Graphic Design">
+        <div class="project__media" data-parallax-inner="0.1">
+          <div class="project__bg project__bg--06"></div>
+          <div class="project__overlay"></div>
+        </div>
+        <div class="project__info">
+          <span class="project__num">06</span>
+          <div class="project__text">
+            <span class="project__cat">Graphic Design · Print</span>
+            <h3 class="project__title">Echo Magazine</h3>
+            <p class="project__desc">Art direction &amp; layout for a bi-annual independent culture magazine.</p>
+            <a href="#" class="project__link">View Publication <span>→</span></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PARALLAX QUOTE ── -->
+  <section class="quote-section">
+    <div class="quote-section__bg" data-parallax="0.25"></div>
+    <div class="quote-section__content">
+      <blockquote class="quote reveal-up">
+        "Design is not just what it looks like and feels like.<br />Design is how it works."
+      </blockquote>
+      <cite class="quote-cite reveal-up" data-delay="200">— Steve Jobs</cite>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="about" id="about">
+    <div class="container about__inner">
+      <div class="about__visual">
+        <div class="about__photo-frame reveal-scale">
+          <div class="about__photo"></div>
+          <div class="about__photo-accent"></div>
+        </div>
+        <div class="about__stats">
+          <div class="stat reveal-up" data-delay="0">
+            <span class="stat__num" data-count="8">0</span>
+            <span class="stat__label">Years of experience</span>
+          </div>
+          <div class="stat reveal-up" data-delay="100">
+            <span class="stat__num" data-count="120">0</span>
+            <span class="stat__label">Projects delivered</span>
+          </div>
+          <div class="stat reveal-up" data-delay="200">
+            <span class="stat__num" data-count="35">0</span>
+            <span class="stat__label">Happy clients</span>
+          </div>
+          <div class="stat reveal-up" data-delay="300">
+            <span class="stat__num" data-count="12">0</span>
+            <span class="stat__label">Awards</span>
+          </div>
+        </div>
+      </div>
+      <div class="about__text">
+        <span class="section-eyebrow reveal-up">About Me</span>
+        <h2 class="section-title reveal-up" data-delay="80">I create with<br />purpose &amp; passion.</h2>
+        <p class="about__bio reveal-up" data-delay="160">
+          I'm a multidisciplinary creative based in Spain, working at the intersection of graphic design, web, photography, and fine art. My work blends rigorous craft with poetic sensitivity — I believe every project deserves both strategic thinking and genuine soul.
+        </p>
+        <p class="about__bio reveal-up" data-delay="240">
+          From brand identities to editorial photography, digital interfaces to gallery exhibitions — I bring the same obsessive attention to detail and the same commitment to visual excellence across every medium I touch.
+        </p>
+        <div class="about__tools reveal-up" data-delay="320">
+          <span class="tool-tag">Figma</span>
+          <span class="tool-tag">Adobe CC</span>
+          <span class="tool-tag">Procreate</span>
+          <span class="tool-tag">Cinema 4D</span>
+          <span class="tool-tag">Lightroom</span>
+          <span class="tool-tag">Webflow</span>
+          <span class="tool-tag">GSAP</span>
+          <span class="tool-tag">Three.js</span>
+        </div>
+        <a href="#contact" class="btn btn--primary reveal-up" data-delay="400">Let's Work Together</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES STRIP ── -->
+  <section class="services">
+    <div class="container">
+      <div class="services__list">
+        <div class="service-item reveal-up" data-delay="0">
+          <span class="service-item__num">01</span>
+          <h4 class="service-item__name">Brand Identity</h4>
+          <p class="service-item__price">From €1,500</p>
+        </div>
+        <div class="service-item reveal-up" data-delay="80">
+          <span class="service-item__num">02</span>
+          <h4 class="service-item__name">Web Design &amp; Dev</h4>
+          <p class="service-item__price">From €2,500</p>
+        </div>
+        <div class="service-item reveal-up" data-delay="160">
+          <span class="service-item__num">03</span>
+          <h4 class="service-item__name">Photography Session</h4>
+          <p class="service-item__price">From €800</p>
+        </div>
+        <div class="service-item reveal-up" data-delay="240">
+          <span class="service-item__num">04</span>
+          <h4 class="service-item__name">Art Commission</h4>
+          <p class="service-item__price">From €500</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="contact" id="contact">
+    <div class="contact__bg" data-parallax="0.2"></div>
+    <div class="container contact__inner">
+      <span class="section-eyebrow reveal-up">Let's Connect</span>
+      <h2 class="contact__title reveal-up" data-delay="80">
+        Have a project<br />in mind?
+      </h2>
+      <p class="contact__sub reveal-up" data-delay="160">
+        I'm available for freelance projects, collaborations &amp; commissions.
+      </p>
+      <a href="mailto:hello@yourname.com" class="contact__email reveal-up" data-delay="240">
+        hello@yourname.com
+      </a>
+      <div class="contact__socials reveal-up" data-delay="320">
+        <a href="#" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Behance">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 9h8a3 3 0 0 1 0 6H3V9zM3 15h9a3 3 0 0 1 0 6H3v-6z"/>
+            <path d="M15 7h6M15 11h6a3 3 0 0 1 0 6h-6V11z"/>
+          </svg>
+        </a>
+        <a href="#" class="social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="4"/>
+            <path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/>
+          </svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Dribbble">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12c3 3 8 5 14 4M7 4c2 3 4 8 4 16M17 5c-2 4-8 8-15 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <span class="footer__logo">YN</span>
+        <span class="footer__copy">© 2025 Your Name. All rights reserved.</span>
+      </div>
+      <div class="footer__right">
+        <a href="#hero" class="footer__back">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── CURSOR ── -->
+  <div class="cursor" id="cursor">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <!-- ── LOADER ── -->
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <div class="loader__logo">YN</div>
+      <div class="loader__bar"><div class="loader__fill"></div></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
