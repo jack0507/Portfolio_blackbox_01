@@ -1,284 +1,489 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — Creative Director & Artist</title>
+  <title>lenny.ab.co — Portfolio Creativo</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
 </head>
 <body>
 
+  <!-- ── LOADER ── -->
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <div class="loader__logo">lenny<span class="loader__dot">.</span></div>
+      <div class="loader__bar"><div class="loader__fill"></div></div>
+      <span class="loader__sub">ab.co</span>
+    </div>
+  </div>
+
+  <!-- ── CURSOR ── -->
+  <div class="cursor" id="cursor">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <!-- ── PROGRESS BAR ── -->
+  <div class="progress-bar" id="progressBar"></div>
+
   <!-- ── NAV ── -->
   <nav class="nav" id="nav">
-    <div class="nav__logo">
-      <span class="nav__logo-text">YN</span>
-    </div>
+    <a href="#hero" class="nav__logo">
+      lenny<span class="nav__logo-dot">.</span>ab.co
+    </a>
     <div class="nav__links">
-      <a href="#work" class="nav__link">Work</a>
+      <a href="#portfolio" class="nav__link">Portfolio</a>
       <a href="#about" class="nav__link">About</a>
-      <a href="#contact" class="nav__link">Contact</a>
+      <a href="#contact" class="nav__link">Contacto</a>
     </div>
-    <div class="nav__menu" id="navMenu">
+    <button class="nav__menu" id="navMenu" aria-label="Menu">
       <span></span><span></span><span></span>
-    </div>
+    </button>
   </nav>
 
-  <!-- ── HERO ── -->
+  <!-- ── MOBILE MENU ── -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#portfolio" class="mobile-menu__link">Portfolio</a>
+    <a href="#about" class="mobile-menu__link">About</a>
+    <a href="#contact" class="mobile-menu__link">Contacto</a>
+  </div>
+
+  <!-- ── HERO PARALLAX ── -->
   <section class="hero" id="hero">
-    <div class="hero__bg-layer hero__bg-layer--1" data-parallax="0.15"></div>
-    <div class="hero__bg-layer hero__bg-layer--2" data-parallax="0.3"></div>
-    <div class="hero__bg-layer hero__bg-layer--3" data-parallax="0.5"></div>
+    <!-- Capas de parallax (se mueven a distinta velocidad con scroll) -->
+    <div class="hero__layer hero__layer--bg"    data-parallax="0.6"></div>
+    <div class="hero__layer hero__layer--mid"   data-parallax="0.35"></div>
+    <div class="hero__layer hero__layer--front" data-parallax="0.12"></div>
+
+    <!-- Canvas de gradiente animado -->
+    <canvas class="hero__canvas" id="heroCanvas"></canvas>
+
+    <!-- Partículas -->
     <div class="hero__particles" id="heroParticles"></div>
+
     <div class="hero__content">
-      <div class="hero__eyebrow reveal-up">Creative Portfolio</div>
+      <p class="hero__eyebrow reveal-up">Portfolio Creativo</p>
       <h1 class="hero__title">
-        <span class="hero__title-line reveal-up" data-delay="0">Design.</span>
-        <span class="hero__title-line reveal-up" data-delay="120">Photography.</span>
-        <span class="hero__title-line reveal-up" data-delay="240">Art.</span>
+        <span class="hero__line reveal-up" data-delay="60">Fotografía.</span>
+        <span class="hero__line reveal-up" data-delay="160">Diseño.</span>
+        <span class="hero__line reveal-up" data-delay="260">Arte.</span>
       </h1>
-      <p class="hero__subtitle reveal-up" data-delay="360">
-        Graphic designer, web designer, photographer &amp; artist.<br />
-        Crafting visual experiences that move people.
+      <p class="hero__sub reveal-up" data-delay="380">
+        Imágenes que hablan. Diseño que conecta.<br />Texturas que se sienten.
       </p>
-      <div class="hero__cta reveal-up" data-delay="480">
-        <a href="#work" class="btn btn--primary">View Work</a>
-        <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+      <div class="hero__cta reveal-up" data-delay="500">
+        <a href="#portfolio" class="btn btn--primary">Ver Portfolio</a>
+        <a href="#contact" class="btn btn--ghost">Escribir</a>
       </div>
     </div>
-    <div class="hero__scroll-indicator">
+
+    <div class="hero__scroll">
       <div class="hero__scroll-line"></div>
       <span>Scroll</span>
     </div>
   </section>
 
-  <!-- ── REEL MARQUEE ── -->
-  <div class="marquee-strip">
-    <div class="marquee-track">
-      <span>Graphic Design</span><span class="dot">·</span>
-      <span>Web Design</span><span class="dot">·</span>
-      <span>Photography</span><span class="dot">·</span>
-      <span>Digital Art</span><span class="dot">·</span>
-      <span>Brand Identity</span><span class="dot">·</span>
-      <span>UI/UX</span><span class="dot">·</span>
-      <span>Fine Art</span><span class="dot">·</span>
-      <span>Motion</span><span class="dot">·</span>
-      <span>Graphic Design</span><span class="dot">·</span>
-      <span>Web Design</span><span class="dot">·</span>
-      <span>Photography</span><span class="dot">·</span>
-      <span>Digital Art</span><span class="dot">·</span>
-      <span>Brand Identity</span><span class="dot">·</span>
-      <span>UI/UX</span><span class="dot">·</span>
-      <span>Fine Art</span><span class="dot">·</span>
-      <span>Motion</span><span class="dot">·</span>
+  <!-- ── MARQUEE ── -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>Fotografía</span><span class="sep">·</span>
+      <span>Diseño Web</span><span class="sep">·</span>
+      <span>Ilustración</span><span class="sep">·</span>
+      <span>Tufted Rugs</span><span class="sep">·</span>
+      <span>Arte Textil</span><span class="sep">·</span>
+      <span>Visual Design</span><span class="sep">·</span>
+      <span>Fotografía</span><span class="sep">·</span>
+      <span>Diseño Web</span><span class="sep">·</span>
+      <span>Ilustración</span><span class="sep">·</span>
+      <span>Tufted Rugs</span><span class="sep">·</span>
+      <span>Arte Textil</span><span class="sep">·</span>
+      <span>Visual Design</span><span class="sep">·</span>
     </div>
   </div>
 
-  <!-- ── DISCIPLINES ── -->
+  <!-- ── CATEGORÍAS (DISCIPLINES) ── -->
   <section class="disciplines" id="disciplines">
     <div class="container">
       <div class="section-header">
-        <span class="section-eyebrow reveal-up">What I Do</span>
-        <h2 class="section-title reveal-up" data-delay="80">Four crafts.<br />One vision.</h2>
+        <span class="eyebrow reveal-up">Especialidades</span>
+        <h2 class="section-title reveal-up" data-delay="80">
+          Cuatro disciplinas.<br />Un universo visual.
+        </h2>
       </div>
       <div class="disciplines__grid">
 
-        <div class="discipline-card reveal-up" data-delay="0">
-          <div class="discipline-card__icon">
+        <div class="disc-card reveal-up" data-delay="0" data-href="#fotografia">
+          <div class="disc-card__icon">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="6" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/>
-              <rect x="26" y="6" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/>
-              <rect x="6" y="26" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/>
-              <circle cx="34" cy="34" r="8" stroke="currentColor" stroke-width="2"/>
+              <rect x="4" y="12" width="40" height="28" rx="5" stroke="currentColor" stroke-width="2"/>
+              <circle cx="24" cy="26" r="8" stroke="currentColor" stroke-width="2"/>
+              <circle cx="24" cy="26" r="3" fill="currentColor"/>
+              <path d="M16 12l3-5h10l3 5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="37" cy="18" r="2" fill="currentColor"/>
             </svg>
           </div>
-          <h3 class="discipline-card__title">Graphic Design</h3>
-          <p class="discipline-card__desc">Brand identities, editorial layouts, typography systems, and visual storytelling that leaves a mark.</p>
-          <div class="discipline-card__tags">
-            <span>Branding</span><span>Typography</span><span>Print</span>
+          <h3 class="disc-card__title">Fotografía</h3>
+          <p class="disc-card__desc">Retratos, paisajes, editorial y fotografía conceptual. Cada encuadre, una historia compuesta con precisión.</p>
+          <div class="disc-card__tags">
+            <span>Retrato</span><span>Editorial</span><span>Conceptual</span>
           </div>
+          <a href="#fotografia" class="disc-card__arrow">→</a>
         </div>
 
-        <div class="discipline-card reveal-up" data-delay="100">
-          <div class="discipline-card__icon">
+        <div class="disc-card reveal-up" data-delay="100" data-href="#web-design">
+          <div class="disc-card__icon">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="10" width="40" height="28" rx="4" stroke="currentColor" stroke-width="2"/>
-              <path d="M16 38v4M32 38v4M12 42h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M13 22h6M13 26h10M29 22h6M29 26h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="24" cy="24" r="5" stroke="currentColor" stroke-width="2"/>
+              <rect x="4" y="8" width="40" height="32" rx="5" stroke="currentColor" stroke-width="2"/>
+              <path d="M4 16h40" stroke="currentColor" stroke-width="2"/>
+              <circle cx="10" cy="12" r="1.5" fill="currentColor"/>
+              <circle cx="16" cy="12" r="1.5" fill="currentColor"/>
+              <circle cx="22" cy="12" r="1.5" fill="currentColor"/>
+              <rect x="10" y="22" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M26 24h12M26 28h8M26 32h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3 class="discipline-card__title">Web Design</h3>
-          <p class="discipline-card__desc">Pixel-perfect digital interfaces with smooth interactions, clean code, and purposeful UX.</p>
-          <div class="discipline-card__tags">
+          <h3 class="disc-card__title">Diseño Web</h3>
+          <p class="disc-card__desc">Interfaces digitales con intención: UI limpia, UX fluida y código cuidado desde la primera línea hasta el deploy.</p>
+          <div class="disc-card__tags">
             <span>UI/UX</span><span>Motion</span><span>Frontend</span>
           </div>
+          <a href="#web-design" class="disc-card__arrow">→</a>
         </div>
 
-        <div class="discipline-card reveal-up" data-delay="200">
-          <div class="discipline-card__icon">
+        <div class="disc-card reveal-up" data-delay="200" data-href="#ilustracion">
+          <div class="disc-card__icon">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="10" width="36" height="28" rx="4" stroke="currentColor" stroke-width="2"/>
-              <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2"/>
-              <circle cx="24" cy="24" r="3" stroke="currentColor" stroke-width="2"/>
-              <circle cx="35" cy="15" r="2" fill="currentColor"/>
+              <path d="M8 38L20 16l10 14 7-8 8 16H8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="13" cy="13" r="4" stroke="currentColor" stroke-width="2"/>
+              <path d="M36 6c3 0 8 5 0 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M36 6c-3 0-8 5 0 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3 class="discipline-card__title">Photography</h3>
-          <p class="discipline-card__desc">Portraits, landscapes, editorial and conceptual photography. Every frame a carefully composed story.</p>
-          <div class="discipline-card__tags">
-            <span>Portrait</span><span>Editorial</span><span>Conceptual</span>
+          <h3 class="disc-card__title">Ilustración</h3>
+          <p class="disc-card__desc">Ilustración digital e impresa: personajes, portadas, tipografía expresiva y mundos visuales propios.</p>
+          <div class="disc-card__tags">
+            <span>Digital</span><span>Impreso</span><span>Conceptual</span>
           </div>
+          <a href="#ilustracion" class="disc-card__arrow">→</a>
         </div>
 
-        <div class="discipline-card reveal-up" data-delay="300">
-          <div class="discipline-card__icon">
+        <div class="disc-card reveal-up" data-delay="300" data-href="#tufted-rugs">
+          <div class="disc-card__icon">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 40L18 20L28 32L35 24L42 40H8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <circle cx="14" cy="14" r="4" stroke="currentColor" stroke-width="2"/>
-              <path d="M34 8c2 0 6 4 0 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M34 8c-2 0-6 4 0 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
+              <path d="M6 18h36M6 30h36M18 6v36M30 6v36" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/>
+              <circle cx="18" cy="18" r="3" fill="currentColor" opacity="0.5"/>
+              <circle cx="30" cy="18" r="3" fill="currentColor" opacity="0.5"/>
+              <circle cx="18" cy="30" r="3" fill="currentColor" opacity="0.5"/>
+              <circle cx="30" cy="30" r="3" fill="currentColor" opacity="0.5"/>
             </svg>
           </div>
-          <h3 class="discipline-card__title">Fine Art</h3>
-          <p class="discipline-card__desc">Mixed media, digital painting, illustration and experimental work that challenges perception.</p>
-          <div class="discipline-card__tags">
-            <span>Illustration</span><span>Mixed Media</span><span>Digital</span>
+          <h3 class="disc-card__title">Tufted Rugs</h3>
+          <p class="disc-card__desc">Alfombras artesanales hechas a mano con pistola de tufting. Piezas únicas donde el diseño se convierte en textura.</p>
+          <div class="disc-card__tags">
+            <span>Handmade</span><span>Arte Textil</span><span>Personalizado</span>
           </div>
+          <a href="#tufted-rugs" class="disc-card__arrow">→</a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ── FEATURED WORK ── -->
-  <section class="work" id="work">
+  <!-- ── PORTFOLIO ── -->
+  <section class="portfolio" id="portfolio">
     <div class="container">
       <div class="section-header">
-        <span class="section-eyebrow reveal-up">Selected Work</span>
-        <h2 class="section-title reveal-up" data-delay="80">Projects that<br />define the craft.</h2>
+        <span class="eyebrow reveal-up">Portfolio</span>
+        <h2 class="section-title reveal-up" data-delay="80">
+          Trabajo seleccionado.
+        </h2>
+      </div>
+
+      <!-- Filtros -->
+      <div class="portfolio__filters reveal-up" data-delay="160">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="fotografia">Fotografía</button>
+        <button class="filter-btn" data-filter="web-design">Diseño Web</button>
+        <button class="filter-btn" data-filter="ilustracion">Ilustración</button>
+        <button class="filter-btn" data-filter="tufted-rugs">Tufted Rugs</button>
       </div>
     </div>
 
-    <!-- Project 01 -->
-    <div class="project project--full reveal-scale" data-category="Graphic Design">
-      <div class="project__media" data-parallax-inner="0.12">
-        <div class="project__bg project__bg--01"></div>
-        <div class="project__overlay"></div>
-      </div>
-      <div class="project__info">
-        <span class="project__num">01</span>
-        <div class="project__text">
-          <span class="project__cat">Graphic Design · Branding</span>
-          <h3 class="project__title">Noir Collective</h3>
-          <p class="project__desc">Complete brand identity for a luxury fashion collective. Type system, color palette, packaging &amp; print materials.</p>
-          <a href="#" class="project__link">View Case Study <span>→</span></a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 02 + 03 grid -->
-    <div class="projects-grid container">
-
-      <div class="project project--half reveal-scale" data-delay="0" data-category="Web Design">
-        <div class="project__media" data-parallax-inner="0.1">
-          <div class="project__bg project__bg--02"></div>
-          <div class="project__overlay"></div>
-        </div>
-        <div class="project__info">
-          <span class="project__num">02</span>
-          <div class="project__text">
-            <span class="project__cat">Web Design · UI/UX</span>
-            <h3 class="project__title">Lumina Studio</h3>
-            <p class="project__desc">Minimal e-commerce experience for an independent jewellery brand.</p>
-            <a href="#" class="project__link">View Project <span>→</span></a>
+    <!-- ── GALERÍA: FOTOGRAFÍA ── -->
+    <div class="gallery-section" id="fotografia">
+      <div class="container">
+        <div class="gallery-section__header">
+          <span class="gallery-section__num">01</span>
+          <div>
+            <h3 class="gallery-section__title">Fotografía</h3>
+            <p class="gallery-section__sub">Imágenes que detienen el tiempo.</p>
           </div>
         </div>
       </div>
-
-      <div class="project project--half reveal-scale" data-delay="150" data-category="Photography">
-        <div class="project__media" data-parallax-inner="0.1">
-          <div class="project__bg project__bg--03"></div>
-          <div class="project__overlay"></div>
+      <div class="gallery" data-category="fotografia">
+        <!-- Las imágenes se cargan desde /images/fotografia/ -->
+        <!-- Placeholder items — reemplaza con <img> reales cuando agregues imágenes -->
+        <div class="gallery-item reveal-scale" data-category="fotografia" data-delay="0">
+          <div class="gallery-item__img gallery-item__img--ph" style="background:linear-gradient(135deg,#1a0d00 0%,#3d2a00 50%,#1a0a00 100%)">
+            <img src="images/fotografia/foto-01.jpg" alt="Fotografía 01" onerror="this.style.display='none'" loading="lazy" />
+            <div class="gallery-item__placeholder-icon">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="12" width="40" height="28" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="26" r="8" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="26" r="3" fill="currentColor"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item__info">
+            <span class="gallery-item__cat">Fotografía · Retrato</span>
+            <h4 class="gallery-item__title">Série Luz Propia</h4>
+          </div>
         </div>
-        <div class="project__info">
-          <span class="project__num">03</span>
-          <div class="project__text">
-            <span class="project__cat">Photography · Editorial</span>
-            <h3 class="project__title">Silence &amp; Light</h3>
-            <p class="project__desc">Editorial series exploring the duality of urban solitude and natural grandeur.</p>
-            <a href="#" class="project__link">View Series <span>→</span></a>
+
+        <div class="gallery-item reveal-scale" data-category="fotografia" data-delay="80">
+          <div class="gallery-item__img gallery-item__img--ph" style="background:linear-gradient(135deg,#0d0d1a 0%,#1a1040 50%,#0a0820 100%)">
+            <img src="images/fotografia/foto-02.jpg" alt="Fotografía 02" onerror="this.style.display='none'" loading="lazy" />
+            <div class="gallery-item__placeholder-icon">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="12" width="40" height="28" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="26" r="8" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="26" r="3" fill="currentColor"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item__info">
+            <span class="gallery-item__cat">Fotografía · Editorial</span>
+            <h4 class="gallery-item__title">Silencio Urbano</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-scale" data-category="fotografia" data-delay="160">
+          <div class="gallery-item__img gallery-item__img--ph" style="background:linear-gradient(135deg,#001a0d 0%,#003d1a 50%,#000d08 100%)">
+            <img src="images/fotografia/foto-03.jpg" alt="Fotografía 03" onerror="this.style.display='none'" loading="lazy" />
+            <div class="gallery-item__placeholder-icon">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="12" width="40" height="28" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="26" r="8" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="26" r="3" fill="currentColor"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item__info">
+            <span class="gallery-item__cat">Fotografía · Paisaje</span>
+            <h4 class="gallery-item__title">Horizonte Quieto</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item gallery-item--wide reveal-scale" data-category="fotografia" data-delay="240">
+          <div class="gallery-item__img gallery-item__img--ph" style="background:linear-gradient(135deg,#1a0010 0%,#3d0025 50%,#1a000f 100%)">
+            <img src="images/fotografia/foto-04.jpg" alt="Fotografía 04" onerror="this.style.display='none'" loading="lazy" />
+            <div class="gallery-item__placeholder-icon">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="12" width="40" height="28" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="26" r="8" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="26" r="3" fill="currentColor"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item__info">
+            <span class="gallery-item__cat">Fotografía · Conceptual</span>
+            <h4 class="gallery-item__title">Memoria en Capas</h4>
           </div>
         </div>
       </div>
-
     </div>
 
-    <!-- Project 04 -->
-    <div class="project project--full reveal-scale" data-category="Fine Art">
-      <div class="project__media" data-parallax-inner="0.12">
-        <div class="project__bg project__bg--04"></div>
-        <div class="project__overlay"></div>
-      </div>
-      <div class="project__info">
-        <span class="project__num">04</span>
-        <div class="project__text">
-          <span class="project__cat">Fine Art · Digital Painting</span>
-          <h3 class="project__title">Fractured Myths</h3>
-          <p class="project__desc">A series of 12 digital paintings reimagining ancient mythology through a cyberpunk lens. Exhibited at Galería Tres, Madrid.</p>
-          <a href="#" class="project__link">View Exhibition <span>→</span></a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 05 + 06 grid -->
-    <div class="projects-grid container">
-
-      <div class="project project--half reveal-scale" data-delay="0" data-category="Web Design">
-        <div class="project__media" data-parallax-inner="0.1">
-          <div class="project__bg project__bg--05"></div>
-          <div class="project__overlay"></div>
-        </div>
-        <div class="project__info">
-          <span class="project__num">05</span>
-          <div class="project__text">
-            <span class="project__cat">Web Design · Motion</span>
-            <h3 class="project__title">Aether Agency</h3>
-            <p class="project__desc">Award-winning creative agency website with generative backgrounds and scroll-driven animations.</p>
-            <a href="#" class="project__link">View Project <span>→</span></a>
+    <!-- ── GALERÍA: DISEÑO WEB ── -->
+    <div class="gallery-section" id="web-design">
+      <div class="container">
+        <div class="gallery-section__header">
+          <span class="gallery-section__num">02</span>
+          <div>
+            <h3 class="gallery-section__title">Diseño Web</h3>
+            <p class="gallery-section__sub">Experiencias digitales con alma.</p>
           </div>
         </div>
       </div>
-
-      <div class="project project--half reveal-scale" data-delay="150" data-category="Graphic Design">
-        <div class="project__media" data-parallax-inner="0.1">
-          <div class="project__bg project__bg--06"></div>
-          <div class="project__overlay"></div>
+      <div class="gallery" data-category="web-design">
+        <div class="gallery-item reveal-scale" data-category="web-design" data-delay="0">
+          <div class="gallery-item__img gallery-item__img--ph" style="background:linear-gradient(135deg,#071a2b 0%,#0e2940 50%,#163a5a 100%)">
+            <img src="images/web-design/web-01.jpg" alt="Web Design 01" onerror="this.style.display='none'" loading="lazy" />
+            <div class="gallery-item__placeholder-icon">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="32" rx="5" stroke="currentColor" stroke-width="2"/><path d="M4 16h40" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item__info">
+            <span class="gallery-item__cat">Web Design · UI/UX</span>
+            <h4 class="gallery-item__title">Lumina Studio</h4>
+          </div>
         </div>
-        <div class="project__info">
-          <span class="project__num">06</span>
-          <div class="project__text">
-            <span class="project__cat">Graphic Design · Print</span>
-            <h3 class="project__title">Echo Magazine</h3>
-            <p class="project__desc">Art direction &amp; layout for a bi-annual independent culture magazine.</p>
-            <a href="#" class="project__link">View Publication <span>→</span></a>
+
+        <div class="gallery-item gallery-item--wide reveal-scale" data-category="web-design" data-delay="80">
+          <div class="gallery-item__img gallery-item__img--ph" style="background:linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%)">
+            <img src="images/web-design/web-02.jpg" alt="Web Design 02" onerror="this.style.display='none'" loading="lazy" />
+            <div class="gallery-item__placeholder-icon">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="32" rx="5" stroke="currentColor" stroke-width="2"/><path d="M4 16h40" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item__info">
+            <span class="gallery-item__cat">Web Design · Motion</span>
+            <h4 class="gallery-item__title">Aether Agency</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-scale" data-category="web-design" data-delay="160">
+          <div class="gallery-item__img gallery-item__img--ph" style="background:linear-gradient(135deg,#001a1a 0%,#003d3d 50%,#000d0d 100%)">
+            <img src="images/web-design/web-03.jpg" alt="Web Design 03" onerror="this.style.display='none'" loading="lazy" />
+            <div class="gallery-item__placeholder-icon">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="32" rx="5" stroke="currentColor" stroke-width="2"/><path d="M4 16h40" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item__info">
+            <span class="gallery-item__cat">Web Design · E-commerce</span>
+            <h4 class="gallery-item__title">Verde Market</h4>
           </div>
         </div>
       </div>
-
     </div>
+
+    <!-- ── GALERÍA: ILUSTRACIÓN ── -->
+    <div class="gallery-section" id="ilustracion">
+      <div class="container">
+        <div class="gallery-section__header">
+          <span class="gallery-section__num">03</span>
+          <div>
+            <h3 class="gallery-section__title">Ilustración</h3>
+            <p class="gallery-section__sub">Mundos nacidos de un trazo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="gallery" data-category="ilustracion">
+        <div class="gallery-item reveal-scale" data-category="ilustracion" data-delay="0">
+          <div class="gallery-item__img gallery-item__img--ph" style="background:linear-gradient(135deg,#1a0020 0%,#3d004d 50%,#1a001a 100%)">
+            <img src="images/ilustracion/ilus-01.jpg" alt="Ilustración 01" onerror="this.style.display='none'" loading="lazy" />
+            <div class="gallery-item__placeholder-icon">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M8 38L20 16l10 14 7-8 8 16H8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item__info">
+            <span class="gallery-item__cat">Ilustración · Digital</span>
+            <h4 class="gallery-item__title">Mitos Fracturados</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-scale" data-category="ilustracion" data-delay="80">
+          <div class="gallery-item__img gallery-item__img--ph" style="background:linear-gradient(135deg,#0a1a00 0%,#1a3d00 50%,#0a1a00 100%)">
+            <img src="images/ilustracion/ilus-02.jpg" alt="Ilustración 02" onerror="this.style.display='none'" loading="lazy" />
+            <div class="gallery-item__placeholder-icon">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M8 38L20 16l10 14 7-8 8 16H8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item__info">
+            <span class="gallery-item__cat">Ilustración · Portada</span>
+            <h4 class="gallery-item__title">Fauna Interior</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item gallery-item--wide reveal-scale" data-category="ilustracion" data-delay="160">
+          <div class="gallery-item__img gallery-item__img--ph" style="background:linear-gradient(135deg,#1a1000 0%,#3d2500 50%,#1a0a00 100%)">
+            <img src="images/ilustracion/ilus-03.jpg" alt="Ilustración 03" onerror="this.style.display='none'" loading="lazy" />
+            <div class="gallery-item__placeholder-icon">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M8 38L20 16l10 14 7-8 8 16H8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item__info">
+            <span class="gallery-item__cat">Ilustración · Serie</span>
+            <h4 class="gallery-item__title">Líneas del Caos</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-scale" data-category="ilustracion" data-delay="240">
+          <div class="gallery-item__img gallery-item__img--ph" style="background:linear-gradient(135deg,#001a1a 0%,#003333 50%,#001010 100%)">
+            <img src="images/ilustracion/ilus-04.jpg" alt="Ilustración 04" onerror="this.style.display='none'" loading="lazy" />
+            <div class="gallery-item__placeholder-icon">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M8 38L20 16l10 14 7-8 8 16H8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item__info">
+            <span class="gallery-item__cat">Ilustración · Tipografía</span>
+            <h4 class="gallery-item__title">Letras Vivas</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── GALERÍA: TUFTED RUGS ── -->
+    <div class="gallery-section gallery-section--special" id="tufted-rugs">
+      <div class="container">
+        <div class="gallery-section__header">
+          <span class="gallery-section__num">04</span>
+          <div>
+            <h3 class="gallery-section__title">Tufted Rugs</h3>
+            <p class="gallery-section__sub">Alfombras hechas a mano. Arte que caminas.</p>
+          </div>
+        </div>
+        <div class="tuft-badge reveal-up">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
+          <span>Proyecto Personal · Handmade</span>
+        </div>
+      </div>
+      <div class="gallery gallery--rugs" data-category="tufted-rugs">
+        <div class="gallery-item reveal-scale" data-category="tufted-rugs" data-delay="0">
+          <div class="gallery-item__img gallery-item__img--ph rug-ph" style="background:linear-gradient(135deg,#1a0d00 0%,#3d2200 50%,#1a0a00 100%)">
+            <img src="images/tufted-rugs/rug-01.jpg" alt="Tufted Rug 01" onerror="this.style.display='none'" loading="lazy" />
+            <div class="gallery-item__placeholder-icon">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2"/><path d="M6 18h36M6 30h36M18 6v36M30 6v36" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item__info">
+            <span class="gallery-item__cat">Tufted Rug · Geométrico</span>
+            <h4 class="gallery-item__title">Rug Nº 01</h4>
+            <span class="rug-tag">Disponible</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-scale" data-category="tufted-rugs" data-delay="80">
+          <div class="gallery-item__img gallery-item__img--ph rug-ph" style="background:linear-gradient(135deg,#0d1a0d 0%,#1a3d1a 50%,#081408 100%)">
+            <img src="images/tufted-rugs/rug-02.jpg" alt="Tufted Rug 02" onerror="this.style.display='none'" loading="lazy" />
+            <div class="gallery-item__placeholder-icon">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2"/><path d="M6 18h36M6 30h36M18 6v36M30 6v36" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item__info">
+            <span class="gallery-item__cat">Tufted Rug · Floral</span>
+            <h4 class="gallery-item__title">Rug Nº 02</h4>
+            <span class="rug-tag rug-tag--sold">Vendido</span>
+          </div>
+        </div>
+
+        <div class="gallery-item gallery-item--wide reveal-scale" data-category="tufted-rugs" data-delay="160">
+          <div class="gallery-item__img gallery-item__img--ph rug-ph" style="background:linear-gradient(135deg,#0d0d1a 0%,#1a1a40 50%,#08082a 100%)">
+            <img src="images/tufted-rugs/rug-03.jpg" alt="Tufted Rug 03" onerror="this.style.display='none'" loading="lazy" />
+            <div class="gallery-item__placeholder-icon">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2"/><path d="M6 18h36M6 30h36M18 6v36M30 6v36" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item__info">
+            <span class="gallery-item__cat">Tufted Rug · Abstracto</span>
+            <h4 class="gallery-item__title">Rug Nº 03</h4>
+            <span class="rug-tag">Disponible</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-scale" data-category="tufted-rugs" data-delay="240">
+          <div class="gallery-item__img gallery-item__img--ph rug-ph" style="background:linear-gradient(135deg,#1a001a 0%,#3d003d 50%,#1a001a 100%)">
+            <img src="images/tufted-rugs/rug-04.jpg" alt="Tufted Rug 04" onerror="this.style.display='none'" loading="lazy" />
+            <div class="gallery-item__placeholder-icon">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2"/><path d="M6 18h36M6 30h36M18 6v36M30 6v36" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item__info">
+            <span class="gallery-item__cat">Tufted Rug · Personalizado</span>
+            <h4 class="gallery-item__title">Rug Nº 04</h4>
+            <span class="rug-tag">Encargo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
 
-  <!-- ── PARALLAX QUOTE ── -->
+  <!-- ── QUOTE / PARALLAX BREAK ── -->
   <section class="quote-section">
-    <div class="quote-section__bg" data-parallax="0.25"></div>
+    <div class="quote-section__bg" data-parallax="0.3"></div>
     <div class="quote-section__content">
       <blockquote class="quote reveal-up">
-        "Design is not just what it looks like and feels like.<br />Design is how it works."
+        "El arte no es lo que ves,<br />sino lo que haces ver a los demás."
       </blockquote>
-      <cite class="quote-cite reveal-up" data-delay="200">— Steve Jobs</cite>
+      <cite class="quote-cite reveal-up" data-delay="200">— Edgar Degas</cite>
     </div>
   </section>
 
@@ -286,77 +491,53 @@
   <section class="about" id="about">
     <div class="container about__inner">
       <div class="about__visual">
-        <div class="about__photo-frame reveal-scale">
-          <div class="about__photo"></div>
-          <div class="about__photo-accent"></div>
+        <div class="about__photo-wrap reveal-scale">
+          <div class="about__photo">
+            <img src="images/about/profile.jpg" alt="Lenny — Retrato" onerror="this.style.display='none'" loading="lazy" />
+          </div>
+          <div class="about__glow"></div>
         </div>
         <div class="about__stats">
           <div class="stat reveal-up" data-delay="0">
-            <span class="stat__num" data-count="8">0</span>
-            <span class="stat__label">Years of experience</span>
+            <span class="stat__num" data-count="5">0</span>
+            <span class="stat__label">Años creando</span>
           </div>
           <div class="stat reveal-up" data-delay="100">
-            <span class="stat__num" data-count="120">0</span>
-            <span class="stat__label">Projects delivered</span>
+            <span class="stat__num" data-count="80">0</span>
+            <span class="stat__label">Proyectos</span>
           </div>
           <div class="stat reveal-up" data-delay="200">
-            <span class="stat__num" data-count="35">0</span>
-            <span class="stat__label">Happy clients</span>
+            <span class="stat__num" data-count="40">0</span>
+            <span class="stat__label">Clientes felices</span>
           </div>
           <div class="stat reveal-up" data-delay="300">
-            <span class="stat__num" data-count="12">0</span>
-            <span class="stat__label">Awards</span>
+            <span class="stat__num" data-count="30">0</span>
+            <span class="stat__label">Rugs hechas</span>
           </div>
         </div>
       </div>
       <div class="about__text">
-        <span class="section-eyebrow reveal-up">About Me</span>
-        <h2 class="section-title reveal-up" data-delay="80">I create with<br />purpose &amp; passion.</h2>
+        <span class="eyebrow reveal-up">Sobre mí</span>
+        <h2 class="section-title reveal-up" data-delay="80">
+          Creo con las manos<br />y con los ojos.
+        </h2>
         <p class="about__bio reveal-up" data-delay="160">
-          I'm a multidisciplinary creative based in Spain, working at the intersection of graphic design, web, photography, and fine art. My work blends rigorous craft with poetic sensitivity — I believe every project deserves both strategic thinking and genuine soul.
+          Soy Lenny — creativa multidisciplinar, fotógrafa, diseñadora web, ilustradora y artista textil. Mi trabajo nace de la curiosidad constante y de la necesidad de explorar distintos medios para encontrar la forma que mejor le habla a cada idea.
         </p>
         <p class="about__bio reveal-up" data-delay="240">
-          From brand identities to editorial photography, digital interfaces to gallery exhibitions — I bring the same obsessive attention to detail and the same commitment to visual excellence across every medium I touch.
+          Las tufted rugs son mi proyecto más personal: alfombras hechas a mano, una a una, donde el diseño se convierte en algo que puedes tocar. Cada pieza es única, irrepetible.
         </p>
         <div class="about__tools reveal-up" data-delay="320">
-          <span class="tool-tag">Figma</span>
-          <span class="tool-tag">Adobe CC</span>
-          <span class="tool-tag">Procreate</span>
-          <span class="tool-tag">Cinema 4D</span>
-          <span class="tool-tag">Lightroom</span>
-          <span class="tool-tag">Webflow</span>
-          <span class="tool-tag">GSAP</span>
-          <span class="tool-tag">Three.js</span>
+          <span class="tool">Figma</span>
+          <span class="tool">Adobe CC</span>
+          <span class="tool">Procreate</span>
+          <span class="tool">Lightroom</span>
+          <span class="tool">Pistola Tufting</span>
+          <span class="tool">Canvas</span>
+          <span class="tool">GSAP</span>
+          <span class="tool">Webflow</span>
         </div>
-        <a href="#contact" class="btn btn--primary reveal-up" data-delay="400">Let's Work Together</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SERVICES STRIP ── -->
-  <section class="services">
-    <div class="container">
-      <div class="services__list">
-        <div class="service-item reveal-up" data-delay="0">
-          <span class="service-item__num">01</span>
-          <h4 class="service-item__name">Brand Identity</h4>
-          <p class="service-item__price">From €1,500</p>
-        </div>
-        <div class="service-item reveal-up" data-delay="80">
-          <span class="service-item__num">02</span>
-          <h4 class="service-item__name">Web Design &amp; Dev</h4>
-          <p class="service-item__price">From €2,500</p>
-        </div>
-        <div class="service-item reveal-up" data-delay="160">
-          <span class="service-item__num">03</span>
-          <h4 class="service-item__name">Photography Session</h4>
-          <p class="service-item__price">From €800</p>
-        </div>
-        <div class="service-item reveal-up" data-delay="240">
-          <span class="service-item__num">04</span>
-          <h4 class="service-item__name">Art Commission</h4>
-          <p class="service-item__price">From €500</p>
-        </div>
+        <a href="#contact" class="btn btn--primary reveal-up" data-delay="400">Trabajemos juntos</a>
       </div>
     </div>
   </section>
@@ -365,42 +546,89 @@
   <section class="contact" id="contact">
     <div class="contact__bg" data-parallax="0.2"></div>
     <div class="container contact__inner">
-      <span class="section-eyebrow reveal-up">Let's Connect</span>
-      <h2 class="contact__title reveal-up" data-delay="80">
-        Have a project<br />in mind?
-      </h2>
-      <p class="contact__sub reveal-up" data-delay="160">
-        I'm available for freelance projects, collaborations &amp; commissions.
-      </p>
-      <a href="mailto:hello@yourname.com" class="contact__email reveal-up" data-delay="240">
-        hello@yourname.com
-      </a>
-      <div class="contact__socials reveal-up" data-delay="320">
-        <a href="#" class="social-link" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-          </svg>
+      <div class="contact__left">
+        <span class="eyebrow reveal-up">Contacto</span>
+        <h2 class="contact__title reveal-up" data-delay="80">
+          ¿Tienes un proyecto<br />en mente?
+        </h2>
+        <p class="contact__sub reveal-up" data-delay="160">
+          Estoy disponible para proyectos de fotografía, diseño web, ilustración y encargos de rugs artesanales.
+        </p>
+        <a href="mailto:hola@lenny.ab.co" class="contact__email reveal-up" data-delay="240">
+          hola@lenny.ab.co
         </a>
-        <a href="#" class="social-link" aria-label="Behance">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M3 9h8a3 3 0 0 1 0 6H3V9zM3 15h9a3 3 0 0 1 0 6H3v-6z"/>
-            <path d="M15 7h6M15 11h6a3 3 0 0 1 0 6h-6V11z"/>
-          </svg>
-        </a>
-        <a href="#" class="social-link" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="2" width="20" height="20" rx="4"/>
-            <path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/>
-          </svg>
-        </a>
-        <a href="#" class="social-link" aria-label="Dribbble">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M2 12c3 3 8 5 14 4M7 4c2 3 4 8 4 16M17 5c-2 4-8 8-15 7"/>
-          </svg>
-        </a>
+        <div class="contact__socials reveal-up" data-delay="320">
+          <a href="#" class="social" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="#" class="social" aria-label="Behance">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.202.483 1.808 1.688 1.808.177 0 .354-.013.517-.05.396-.086.617-.276.836-.786L23.726 17zM15.998 13.394h5.007c-.18-1.18-.674-1.867-2.228-1.867-1.415 0-2.275.72-2.779 1.867zm-14.28 4.917l.002-13.315h6.432c3.053 0 4.58 1.374 4.58 3.853 0 1.31-.69 2.314-1.78 2.855 1.48.437 2.333 1.65 2.333 3.16 0 2.8-1.905 3.447-5.027 3.447H1.718zm3.045-5.59v3.233h2.74c1.252 0 1.992-.45 1.992-1.588 0-1.096-.672-1.645-2.04-1.645H4.763zm0-4.568v2.76h2.415c1.12 0 1.724-.39 1.724-1.38 0-.97-.604-1.38-1.776-1.38H4.763z"/>
+            </svg>
+          </a>
+          <a href="#" class="social" aria-label="Pinterest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 2a10 10 0 0 0-3.5 19.35c-.1-.9 0-2 .25-3l1.65-7s-.4-.85-.4-2.1c0-2 1.15-3.45 2.6-3.45 1.2 0 1.8.9 1.8 2 0 1.2-.75 3-1.15 4.65-.35 1.4.7 2.5 2.05 2.5 2.45 0 4.1-3.15 4.1-6.9 0-2.85-1.95-5-5.4-5-3.9 0-6.3 2.9-6.3 6.1 0 1.1.3 1.85.85 2.45.25.25.25.35.2.6l-.3 1.2c-.1.4-.35.55-.65.4-1.8-.75-2.65-2.8-2.65-5.1 0-3.75 3.15-8.2 9.4-8.2 5 0 8.3 3.65 8.3 7.55 0 5.15-2.85 9-7 9-1.4 0-2.7-.75-3.15-1.6l-.85 3.2c-.3 1.15-1.1 2.55-1.65 3.4.85.25 1.7.4 2.6.4a10 10 0 0 0 0-20z"/>
+            </svg>
+          </a>
+          <a href="#" class="social" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34v-7.1a8.16 8.16 0 0 0 4.77 1.52V6.28a4.85 4.85 0 0 1-1-.41z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ── FORMULARIO DE CONTACTO RÁPIDO ── -->
+      <div class="contact__form-wrap reveal-scale" data-delay="200">
+        <form class="contact-form" id="contactForm" novalidate>
+          <h3 class="contact-form__title">Envíame un mensaje</h3>
+
+          <div class="form-group">
+            <label for="cf-name" class="form-label">Nombre</label>
+            <input type="text" id="cf-name" name="name" class="form-input" placeholder="Tu nombre" required />
+            <span class="form-error" id="err-name"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-email" class="form-label">Email</label>
+            <input type="email" id="cf-email" name="email" class="form-input" placeholder="tu@email.com" required />
+            <span class="form-error" id="err-email"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-type" class="form-label">Tipo de proyecto</label>
+            <select id="cf-type" name="type" class="form-input form-select">
+              <option value="">Selecciona una opción</option>
+              <option value="fotografia">Fotografía</option>
+              <option value="web-design">Diseño Web</option>
+              <option value="ilustracion">Ilustración</option>
+              <option value="tufted-rug">Tufted Rug (encargo)</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-msg" class="form-label">Mensaje</label>
+            <textarea id="cf-msg" name="message" class="form-input form-textarea" placeholder="Cuéntame tu idea..." rows="4" required></textarea>
+            <span class="form-error" id="err-msg"></span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full" id="cf-submit">
+            <span class="btn-text">Enviar mensaje</span>
+            <span class="btn-icon">→</span>
+          </button>
+
+          <div class="form-success" id="formSuccess">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+            <span>¡Mensaje enviado! Te escribo pronto.</span>
+          </div>
+        </form>
       </div>
     </div>
   </section>
@@ -409,26 +637,26 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__left">
-        <span class="footer__logo">YN</span>
-        <span class="footer__copy">© 2025 Your Name. All rights reserved.</span>
+        <span class="footer__logo">lenny<span class="footer__dot">.</span>ab.co</span>
+        <span class="footer__copy">© 2025 lenny.ab.co — Todos los derechos reservados.</span>
       </div>
       <div class="footer__right">
-        <a href="#hero" class="footer__back">Back to top ↑</a>
+        <a href="#hero" class="footer__top">Volver arriba ↑</a>
       </div>
     </div>
   </footer>
 
-  <!-- ── CURSOR ── -->
-  <div class="cursor" id="cursor">
-    <div class="cursor__dot"></div>
-    <div class="cursor__ring"></div>
-  </div>
-
-  <!-- ── LOADER ── -->
-  <div class="loader" id="loader">
-    <div class="loader__inner">
-      <div class="loader__logo">YN</div>
-      <div class="loader__bar"><div class="loader__fill"></div></div>
+  <!-- ── LIGHTBOX ── -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar">✕</button>
+    <button class="lightbox__prev" id="lightboxPrev" aria-label="Anterior">‹</button>
+    <button class="lightbox__next" id="lightboxNext" aria-label="Siguiente">›</button>
+    <div class="lightbox__content">
+      <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+      <div class="lightbox__info">
+        <span class="lightbox__cat" id="lightboxCat"></span>
+        <p class="lightbox__title" id="lightboxTitle"></p>
+      </div>
     </div>
   </div>
 
